@@ -1,0 +1,5 @@
+<aside class="sidebar" *ngIf="isSidebarOpen">
+  <a routerLink="/admin/dashboard" *ngIf="isAdmin">Admin Dashboard</a>
+  <a routerLink="/staff/dashboard" *ngIf="isStaff">Staff Dashboard</a>
+  <a routerLink="/profile">My Profile</a>
+</aside>

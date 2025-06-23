@@ -4,7 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router'; // ✅ Import this
+import { Router, RouterModule } from '@angular/router'; // ✅ Import this
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -22,13 +23,28 @@ import { RouterModule } from '@angular/router'; // ✅ Import this
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  credentials = {
-    email: '',
-    password: ''
-  };
+  email = '';
+  password = '';
+  rememberMe = false;
+ constructor(private authService: AuthService, private router: Router) {}
+ login() {
+    this.authService.login({ email: this.email, password: this.password, rememberMe: this.rememberMe }).subscribe({
+      next: (res) => {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('role', res.role);
+        localStorage.setItem('email', res.email)
 
-  login() {
-    console.log('Logging in with:', this.credentials);
-    // Call backend API here
+        // Navigate based on role
+        if (res.role === 'Admin') {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/staff']);
+        }
+      },
+      error: (err) => {
+        console.error('Login failed', err);
+        alert('Invalid email or password');
+      }
+    });
   }
 }

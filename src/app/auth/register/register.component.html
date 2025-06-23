@@ -5,22 +5,22 @@
             <form (ngSubmit)="register()" class="register-form">
                 <mat-form-field appearance="fill" class="full-width">
                     <mat-label>Username</mat-label>
-                    <input matInput [(ngModel)]="user.name" name="username" required />
+                    <input matInput [(ngModel)]="user.name" name="username" required autocomplete="username" />
                 </mat-form-field>
 
                 <mat-form-field appearance="fill" class="full-width">
                     <mat-label>Email</mat-label>
-                    <input matInput type="email" [(ngModel)]="user.userEmail" name="email" required />
+                    <input matInput type="email" [(ngModel)]="user.userEmail" name="email" required autocomplete="email" />
                 </mat-form-field>
 
                 <mat-form-field appearance="fill" class="full-width">
                     <mat-label>Phone</mat-label>
-                    <input matInput type="phone" [(ngModel)]="user.phone" name="phone" required />
+                    <input matInput type="tel" [(ngModel)]="user.phone" name="phone" required autocomplete="tel" />
                 </mat-form-field>
 
                 <mat-form-field appearance="fill" class="full-width">
                     <mat-label>Password</mat-label>
-                    <input matInput type="password" [(ngModel)]="user.password" name="password" required />
+                    <input matInput type="password" [(ngModel)]="user.password" name="password" required autocomplete="new-password"/>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill" class="full-width">

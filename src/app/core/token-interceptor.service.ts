@@ -1,9 +1,19 @@
-import { Injectable } from '@angular/core';
+// src/app/core/token-interceptor.service.ts
 
-@Injectable({
-  providedIn: 'root'
-})
-export class TokenInterceptorService {
+import { HttpInterceptorFn } from '@angular/common/http';
+import { inject } from '@angular/core';
 
-  constructor() { }
-}
+export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    const authReq = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return next(authReq);
+  }
+
+  return next(req);
+};
