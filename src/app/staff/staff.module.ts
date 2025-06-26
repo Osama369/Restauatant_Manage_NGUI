@@ -9,14 +9,14 @@ import { SidebarComponent } from "../shared/sidebar/sidebar.component";
 import { FooterComponent } from "../shared/footer/footer.component";
 
 @NgModule({
-  declarations: [StaffLayoutComponent,  NavbarComponent,
-    SidebarComponent, FooterComponent
-],
+//   declarations: [StaffLayoutComponent,  NavbarComponent,
+//     SidebarComponent, FooterComponent
+// ],
   imports: [
     CommonModule,
     StaffRoutingModule,
     RouterModule,
-    
+   
 ],
 
 

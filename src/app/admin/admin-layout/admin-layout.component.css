@@ -1,0 +1,57 @@
+/* Reset default margin/padding */
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 60px); /* Adjusted after navbar height */
+}
+
+/* app-navbar {
+  height: 60px;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+} */
+
+/* app-sidebar {
+  width: 220px;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+} */
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px; /* Push below navbar */
+  margin-left: 230px; /* Sidebar width */
+  overflow: auto;
+  height: calc(100vh - 60px);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+}
+
+/* app-footer {
+  background-color: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+} */

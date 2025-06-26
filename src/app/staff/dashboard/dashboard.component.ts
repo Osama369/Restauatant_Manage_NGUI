@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
+import { StaffLayoutComponent } from '../staff-layout/staff-layout.component';
 
 @Component({
   selector: 'app-dashboard',
   imports: [],
+  standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -18,7 +20,7 @@ export class DashboardComponent {
     this.role = this.authService.getRole();
   }
 
-    logout() {
-    this.authService.logout();
-  }
+  //   logout() {
+  //   this.authService.logout();
+  // }
 }

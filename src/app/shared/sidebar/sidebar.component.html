@@ -1,5 +1,16 @@
 <aside class="sidebar" *ngIf="isSidebarOpen">
-  <a routerLink="/admin/dashboard" *ngIf="isAdmin">Admin Dashboard</a>
-  <a routerLink="/staff/dashboard" *ngIf="isStaff">Staff Dashboard</a>
-  <a routerLink="/profile">My Profile</a>
+  <nav>
+    <ul>
+      <li *ngFor="let link of links">
+        <a
+          [routerLink]="link.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span class="icon">{{ link.icon }}</span>
+          <span class="label">{{ link.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </aside>

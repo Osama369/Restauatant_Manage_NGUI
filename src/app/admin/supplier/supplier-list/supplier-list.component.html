@@ -1,0 +1,24 @@
+<div class="supplier-container">
+  <div class="header">
+    <h2>Supplier List</h2>
+    <button class="add-btn" (click)="onAddSupplier()">+ Add Supplier</button>
+  </div>
+
+  <table class="supplier-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let supplier of suppliers">
+        <td>{{ supplier.name }}</td>
+        <td>
+          <button class="edit-btn" (click)="onEdit(supplier)">Edit</button>
+          <button class="delete-btn" (click)="onDelete(supplier.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

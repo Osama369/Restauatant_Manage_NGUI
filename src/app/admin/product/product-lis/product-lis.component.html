@@ -1,0 +1,32 @@
+<div class="product-container">
+  <div class="header">
+    <h2>Product List</h2>
+    <button class="add-btn" (click)="onAddProduct()">+ Add Product</button>
+  </div>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Purchase Price</th>
+        <th>Sale Price</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.purcahsePrice }}</td>
+        <td>{{ product.salePrice }}</td>
+        <td>
+          <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+        </td>
+        <td>
+          <button class="edit-btn" (click)="onEdit(product)">Edit</button>
+          <button class="delete-btn" (click)="onDelete(product.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

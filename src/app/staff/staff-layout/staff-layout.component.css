@@ -1,8 +1,17 @@
 .layout-container {
   display: flex;
+  margin-top: 60px;
+  text-align: center;
+}
+.main-wrapper {
+  flex: 1;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
 }
 .main-content {
-  margin-left: 200px;
-  padding: 20px;
   flex: 1;
+  padding: 20px;
+  padding-bottom: 60px;
 }

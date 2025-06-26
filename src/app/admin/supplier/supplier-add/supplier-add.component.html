@@ -1,0 +1,10 @@
+<!-- supplier-add.component.html -->
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Supplier Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Add Supplier</button>
+  </form>
+</mat-card>
